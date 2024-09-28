@@ -31,6 +31,7 @@ def find_chess_board(img):
                 
     if largest_rectangle is not None:
         x, y, w, h = cv2.boundingRect(largest_rectangle)
+        print(w, h)
         roi = img[y:y+h, x:x+w]
         if roi.size > 0:  # 确保 roi 不为空
             return roi, largest_rectangle

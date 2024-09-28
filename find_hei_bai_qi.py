@@ -30,7 +30,7 @@ def find_qi_blobs(frame):
     # cv.drawContours(frame, contours2, -1, (0, 255, 0), 2)
     for i, contour in enumerate(contours1):
         area1 = cv.contourArea(contour)
-        print(area1)
+        # print(area1)
         if area1 > 500:
             (x1, y1), radius1 = cv.minEnclosingCircle(contours1[i])
             x1 = int(x1)
@@ -45,7 +45,7 @@ def find_qi_blobs(frame):
             #         1, [255, 255, 255])
     for k, contour in enumerate(contours2):
         area2 = cv.contourArea(contour)
-        print(area2)
+        # print(area2)
         if area2 > 1000:
             (x2, y2), radius2 = cv.minEnclosingCircle(contours2[k])
             x2 = int(x2)

@@ -8,7 +8,7 @@ def main(frame):
     rect, largest_rectangle = find_chess_board(frame)
     circles = None  # 初始化 circles 变量
     if rect is not None and largest_rectangle is not None:
-        print(len(largest_rectangle[0, :]))
+        cv2.imshow('rect', rect)
         cv2.drawContours(frame, [largest_rectangle], -1, (0, 255, 0), 2)
         circles = detectCircles(rect)
     else:
