@@ -37,24 +37,24 @@ def find_chess_board(img):
             return roi, largest_rectangle
     return None, None
     
-# if __name__ == "__main__":
-#     cap = cv2.VideoCapture(1)  # 打开摄像头，0表示默认摄像头
+if __name__ == "__main__":
+    cap = cv2.VideoCapture(1)  # 打开摄像头，0表示默认摄像头
 
-#     while True:
-#         ret, frame = cap.read()  # 从摄像头读取一帧图像
-#         if not ret:
-#             break  # 如果读取失败，退出循环
+    while True:
+        ret, frame = cap.read()  # 从摄像头读取一帧图像
+        if not ret:
+            break  # 如果读取失败，退出循环
 
-#         # 处理每一帧图像
-#         roi, largest_rectangle = find_chess_board(frame)
-#         if roi is not None:
-#             print(len(roi[0, :]))
-#             cv2.drawContours(frame, [largest_rectangle], -1, (0, 255, 0), 2)
-#             cv2.imshow('ROI', roi)  # 显示检测到的ROI
+        # 处理每一帧图像
+        roi, largest_rectangle = find_chess_board(frame)
+        if roi is not None:
+            print(len(roi[0, :]))
+            cv2.drawContours(frame, [largest_rectangle], -1, (0, 255, 0), 2)
+            cv2.imshow('ROI', roi)  # 显示检测到的ROI
 
-#         cv2.imshow('Frame', frame)  # 显示当前帧图像
-#         if cv2.waitKey(1) & 0xFF == 27:  # 按ESC键退出
-#             break
+        cv2.imshow('Frame', frame)  # 显示当前帧图像
+        if cv2.waitKey(1) & 0xFF == 27:  # 按ESC键退出
+            break
 
-#     cap.release()  # 释放摄像头资源
-#     cv2.destroyAllWindows()  # 关闭所有OpenCV窗口
+    cap.release()  # 释放摄像头资源
+    cv2.destroyAllWindows()  # 关闭所有OpenCV窗口
